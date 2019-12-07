@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gradient_vertical_blue"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:text="@string/helpzone"
+            android:textColor="@color/almost_white"
+            android:textSize="@dimen/text_size_normal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingTop="17dp"
+            android:paddingBottom="15dp">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/back"
+                android:visibility="gone"
+                android:tint="@color/white" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_below="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/image_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_default"
+                android:src="@drawable/ic_launcher_round" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:fontFamily="@font/montserrat_medium"
+                android:paddingLeft="@dimen/size_m"
+                android:text="@string/name"
+                android:textColor="@color/blue_strong"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:id="@+id/nombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/size_m"
+                android:layout_marginTop="@dimen/margin_small"
+                android:fontFamily="@font/montserrat_medium"
+                android:textSize="@dimen/text_size_medium"
+                android:text="Nombre del paciente"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_xxs"
+                android:fontFamily="@font/montserrat_medium"
+                android:paddingLeft="@dimen/size_m"
+                android:text="@string/email"
+                android:textColor="@color/blue_strong"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:id="@+id/correo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/size_m"
+                android:layout_marginTop="@dimen/margin_small"
+                android:fontFamily="@font/montserrat_medium"
+                android:textSize="@dimen/text_size_medium"
+                android:text="example@correo.com"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_xxs"
+                android:fontFamily="@font/montserrat_medium"
+                android:paddingLeft="@dimen/size_m"
+                android:text="@string/cc"
+                android:textColor="@color/blue_strong"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:id="@+id/cedula"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/size_m"
+                android:layout_marginTop="@dimen/margin_small"
+                android:fontFamily="@font/montserrat_medium"
+                android:textSize="@dimen/text_size_medium"
+                android:text="1.234.567.890"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_xxs"
+                android:fontFamily="@font/montserrat_medium"
+                android:paddingLeft="@dimen/size_m"
+                android:text="@string/skill"
+                android:textColor="@color/blue_strong"
+                android:textSize="@dimen/text_size_large"/>
+
+            <TextView
+                android:id="@+id/especialidad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/size_m"
+                android:layout_marginTop="@dimen/margin_small"
+                android:fontFamily="@font/montserrat_medium"
+                android:textSize="@dimen/text_size_medium"
+                android:text="Corazon"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_xxs"
+                android:fontFamily="@font/montserrat_medium"
+                android:paddingLeft="@dimen/size_m"
+                android:text="@string/cellphone"
+                android:textColor="@color/blue_strong"
+                android:textSize="@dimen/text_size_large"/>
+
+            <TextView
+                android:id="@+id/telefono"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/size_m"
+                android:layout_marginTop="@dimen/margin_small"
+                android:fontFamily="@font/montserrat_medium"
+                android:textSize="@dimen/text_size_medium"
+                android:text="444-4444"/>
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="@dimen/margin_xlarge"-->
+<!--                android:fontFamily="@font/montserrat_medium"-->
+<!--                android:paddingLeft="@dimen/size_m"-->
+<!--                android:text="@string/patients"-->
+<!--                android:textColor="@color/blue_strong"-->
+<!--                android:textSize="@dimen/text_size_medium" />-->
+
+
+<!--            <Button-->
+<!--                android:id="@+id/save_button"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_marginVertical="@dimen/size_l"-->
+<!--                android:layout_marginBottom="@dimen/margin_default"-->
+<!--                android:background="@drawable/rounded_circle_blue"-->
+<!--                android:elevation="15dp"-->
+<!--                android:fontFamily="@font/montserrat_medium"-->
+<!--                android:paddingHorizontal="@dimen/body_petit"-->
+<!--                android:paddingVertical="@dimen/text_size_medium"-->
+<!--                android:text="@string/save"-->
+<!--                android:textAllCaps="false"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="@dimen/text_size_medium" />-->
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

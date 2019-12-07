@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/centerBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/mainContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_small">
+
+                <LinearLayout
+                    android:id="@+id/contentBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/text_size_large"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <ImageView
+                            android:id="@+id/closeButton"
+                            android:layout_width="@dimen/size_s"
+                            android:layout_height="@dimen/size_s"
+                            android:layout_margin="@dimen/margin_default"
+                            android:padding="@dimen/margin_xsmall"
+                            android:layout_marginLeft="@dimen/margin_default"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentRight="true"
+                            android:tint="@color/gray_strong"/>
+
+                        <TextView
+                            android:id="@+id/title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/margin_large"
+                            android:text="Selecciona el parametro"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:textColor="@color/blue_strong"
+                            android:textSize="@dimen/text_size_small" />
+                    </RelativeLayout>
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/gray_light"/>
+
+                    <RelativeLayout
+                        android:id="@+id/select"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:layout_margin="@dimen/margin_xlarge">
+
+                        <CheckBox
+                            android:id="@+id/pulsoCheck"
+                            android:theme="@style/checkBoxStyle"
+                            android:layout_width="@dimen/size_m"
+                            android:layout_height="@dimen/size_m"/>
+
+                        <CheckBox
+                            android:id="@+id/ecgCheck"
+                            android:theme="@style/checkBoxStyle"
+                            android:layout_width="@dimen/size_m"
+                            android:layout_height="@dimen/size_m"
+                            android:layout_below="@id/pulsoCheck"
+                            android:layout_marginTop="@dimen/text_size_large" />
+
+                        <TextView
+                            android:id="@+id/imediateText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/pulsoCheck"
+                            android:layout_alignTop="@+id/pulsoCheck"
+                            android:layout_marginLeft="@dimen/margin_small"
+                            android:layout_toRightOf="@id/pulsoCheck"
+                            android:gravity="center_vertical"
+                            android:text="Pulso"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:textSize="@dimen/text_size_medium"
+                            android:textColor="@color/gray_strong" />
+
+                        <TextView
+                            android:id="@+id/scheduleText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/ecgCheck"
+                            android:layout_alignBottom="@id/ecgCheck"
+                            android:layout_marginLeft="@dimen/margin_small"
+                            android:layout_toRightOf="@id/ecgCheck"
+                            android:gravity="center_vertical"
+                            android:textSize="@dimen/text_size_medium"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:text="ECG"
+                            android:textColor="@color/gray_strong" />
+
+                    </RelativeLayout>
+
+                    <Button
+                        android:id="@+id/actionButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/margin_small"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_alignBottom="@+id/viewHelp"
+                        android:background="@drawable/rounded_circle_blue"
+                        android:elevation="20dp"
+                        android:paddingVertical="@dimen/text_size_medium"
+                        android:paddingHorizontal="@dimen/body_petit"
+                        android:text="Continuar"
+                        android:textAllCaps="false"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_small" />
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
+
