@@ -9,9 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.android.myapplication.R;
-
-import medical.monitor.AgentMonitor;
+import com.example.admin.R;
 
 public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.PatientHolder> {
 
@@ -56,7 +54,7 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.PatientH
 
         @Override
         public void onClick(View v) {
-            new AgentMonitor(agent.pacientes.get(position).getId());
+//            new AgentMonitor(agent.pacientes.get(position).getId());
             DialogSelectParameter dialogSelectParameter = new DialogSelectParameter(activity);
             dialogSelectParameter.show();
 //            Intent in = new Intent(activity, MonitorActivity.class);

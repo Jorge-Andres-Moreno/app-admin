@@ -13,10 +13,10 @@ import org.json.JSONObject;
 
 import java.util.concurrent.TimeUnit;
 
-import medical.model.LocalDataBase;
-import medical.model.User;
-import medical.utils.DefaultCallback;
-import medical.utils.NetworkConstants;
+import admin.model.LocalDataBase;
+import admin.model.User;
+import admin.utils.DefaultCallback;
+import admin.utils.NetworkConstants;
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;

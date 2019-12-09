@@ -6,9 +6,9 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.android.myapplication.R;
+import com.example.admin.R;
 
-import medical.home.HomeActivity;
+import admin.home.HomeActivity;
 
 public class SplashScreenActivity extends AppCompatActivity {
 

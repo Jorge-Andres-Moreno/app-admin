@@ -18,14 +18,14 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.android.myapplication.R;
+import com.example.admin.R;
 import com.google.android.material.navigation.NavigationView;
 
-import medical.help.HelpActivity;
-import medical.login.AgentLogin;
-import medical.login.LoginActivity;
-import medical.profile.ProfileActivity;
-import medical.utils.DefaultCallback;
+import admin.help.HelpActivity;
+import admin.login.AgentLogin;
+import admin.login.LoginActivity;
+import admin.profile.ProfileActivity;
+import admin.utils.DefaultCallback;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 

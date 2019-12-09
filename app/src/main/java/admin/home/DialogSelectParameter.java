@@ -11,10 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 
-import com.android.myapplication.R;
-
-import medical.monitor.AgentMonitor;
-import medical.monitor.MonitorActivity;
+import com.example.admin.R;
 
 public class DialogSelectParameter extends Dialog implements View.OnClickListener {
 
@@ -85,9 +82,9 @@ public class DialogSelectParameter extends Dialog implements View.OnClickListene
 
             case R.id.actionButton:
                 if (pulsoBox.isChecked() || ecgBox.isChecked()) {
-                    AgentMonitor.INSTANCE.type = pulsoBox.isChecked() ? 0 : 1;
-                    Intent in = new Intent(v.getContext(), MonitorActivity.class);
-                    v.getContext().startActivity(in);
+//                    AgentMonitor.INSTANCE.type = pulsoBox.isChecked() ? 0 : 1;
+//                    Intent in = new Intent(v.getContext(), MonitorActivity.class);
+//                    v.getContext().startActivity(in);
                     this.dismiss();
                 } else
                     Toast.makeText(v.getContext(), "Por favor seleccione una categoría", Toast.LENGTH_SHORT).show();

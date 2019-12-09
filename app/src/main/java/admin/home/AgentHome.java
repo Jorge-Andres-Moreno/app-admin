@@ -6,10 +6,10 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
-import medical.model.LocalDataBase;
-import medical.model.Patient;
-import medical.utils.DefaultCallback;
-import medical.utils.NetworkConstants;
+import admin.model.LocalDataBase;
+import admin.model.Patient;
+import admin.utils.DefaultCallback;
+import admin.utils.NetworkConstants;
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;

@@ -14,11 +14,10 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import com.android.myapplication.R;
+import com.example.admin.R;
 
-import medical.home.HomeActivity;
-import medical.utils.DefaultCallback;
-
+import admin.home.HomeActivity;
+import admin.utils.DefaultCallback;
 
 public class LoginActivity extends AppCompatActivity implements DefaultCallback {
 

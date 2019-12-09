@@ -8,9 +8,9 @@ import android.widget.TextView;
 
 import androidx.core.content.ContextCompat;
 
-import com.android.myapplication.R;
+import com.example.admin.R;
 
-import medical.model.LocalDataBase;
+import admin.model.LocalDataBase;
 
 public class ProfileActivity extends Activity {
 

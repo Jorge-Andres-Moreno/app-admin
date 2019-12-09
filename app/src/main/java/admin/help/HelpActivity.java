@@ -15,9 +15,9 @@ import android.widget.Toast;
 
 import androidx.core.content.ContextCompat;
 
-import com.android.myapplication.R;
+import com.example.admin.R;
 
-import medical.utils.DefaultCallback;
+import admin.utils.DefaultCallback;
 
 public class HelpActivity extends Activity implements DefaultCallback {
 

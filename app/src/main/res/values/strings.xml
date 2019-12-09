@@ -1,6 +1,5 @@
 <resources>
 
-
     <string name="app_name">Medical Admin</string>
     <string name="deviceLost">No se encontraron pacientes</string>
     <string name="email">Correo Electronico</string>
