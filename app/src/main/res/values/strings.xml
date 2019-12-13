@@ -48,6 +48,44 @@
     <string name="expirydate">Fecha de vencimiento</string>
     <string name="cvcode">Codigo CV</string>
     <string name="totalpay">Total a pagar</string>
+    <string name="management_doctors">Gestion de doctores</string>
+    <string name="management_patients">Gestion de pacientes</string>
+    <string name="management_help">Gestion de ayuda</string>
+
+    <string name="add">Agregar</string>
+    <string name="info">Información</string>
+    <string name="name_1">Nombre:</string>
+    <string name="id">Cedula</string>
+    <string name="id_example">1.234.567.890</string>
+    <string name="id_1">Cedula:</string>
+    <string name="birth_date_1">Fecha de nacimiento:</string>
+    <string name="birth_date_example">AAAA/MM/DD</string>
+    <string name="risk_1">Riesgo:</string>
+    <string name="risk_example">BAJO, MEDIO O ALTO</string>
+    <string name="diagnostic_1">Diagnostico:</string>
+    <string name="diagnostic_example">Descripción sobre el paciente y sus patalogias</string>
+    <string name="age_1">Edad:</string>
+    <string name="age_example">##</string>
+    <string name="email_1">Correo Electronico:</string>
+    <string name="email_example">example@mail.com</string>
+    <string name="mobile_number_1">Numero de celular:</string>
+    <string name="mobile_number_example">301-245-6789</string>
+    <string name="city_1">Municipio:</string>
+    <string name="state_1">Departamento:</string>
+    <string name="state_example">Valle Del Cauca</string>
+    <string name="city_example">Cali</string>
+    <string name="password_1">Contraseña:</string>
+    <string name="password_example">**********</string>
+    <string name="confirm_password_1">Confirmar Contraseña:</string>
+    <string name="information_company_1">Datos de la compañia</string>
+    <string name="address_1">Dirección:</string>
+    <string name="address_example">Cra 123 # 45 - 67</string>
+    <string name="telephone_number_1">Numero telefonico:</string>
+    <string name="telephone_number_example">123 45 67</string>
+    <string name="register">Registrar</string>
+    <string name="contact">Contacto</string>
+    <string name="relation_1">Parentesco:</string>
+    <string name="relation_example">Padre, Hijo, Hermano, Amigo, etc.</string>
 
 
 </resources>

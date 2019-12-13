@@ -26,22 +26,56 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true" />
 
-            <TextView
-                android:paddingVertical="@dimen/margin_large"
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:paddingLeft="@dimen/margin_large"
-                android:textSize="@dimen/text_size_large"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:background="@color/red_soft"
-                android:text="@string/List_patients"/>
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/doctor_button"
+                    android:layout_width="@dimen/body_max"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/patient_button"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="@dimen/size_xxs"
+                    android:background="@drawable/rounded_blue_soft"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:padding="@dimen/size_xxs"
+                    android:text="@string/management_doctors"
+                    android:textColor="@color/blue_strong"
+                    android:textSize="@dimen/text_size_xlarge" />
 
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycler_patients"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingHorizontal="@dimen/text_size_xxs"/>
+                <Button
+                    android:id="@+id/patient_button"
+                    android:layout_width="@dimen/body_max"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/rounded_blue"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:padding="@dimen/size_xxs"
+                    android:text="@string/management_patients"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_xlarge" />
+
+                <Button
+                    android:id="@+id/help_button"
+                    android:layout_width="@dimen/body_max"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/patient_button"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/size_xxs"
+                    android:background="@drawable/rounded_blue_strong"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:padding="@dimen/size_m"
+                    android:text="@string/management_help"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_xlarge" />
+
+
+            </RelativeLayout>
+
 
         </LinearLayout>
 

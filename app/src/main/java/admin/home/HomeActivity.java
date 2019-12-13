@@ -15,8 +15,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.admin.R;
 import com.google.android.material.navigation.NavigationView;
@@ -30,12 +28,8 @@ import admin.utils.DefaultCallback;
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private Toolbar toolbar;
-    private PatientAdapter adapter;
-    private RecyclerView recycler;
     private AgentHome agent;
-    private TextView title;
 
-    //private RotateLoading loader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,27 +49,16 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        agent = new AgentHome();
+
         View headerView = navigationView.getHeaderView(0);
         TextView navUsername = headerView.findViewById(R.id.nameUserNav);
-
-        title = findViewById(R.id.title);
+        navUsername.setText(agent.getLocalDb().getUser().getNombre());
 
         Window window = getWindow();
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.setStatusBarColor(ContextCompat.getColor(this, R.color.blue_strong));
-
-        agent = new AgentHome();
-
-        adapter = new PatientAdapter(agent, this);
-        recycler = findViewById(R.id.recycler_patients);
-        recycler.setHasFixedSize(true);
-        recycler.setLayoutManager(new LinearLayoutManager(this));
-        recycler.setAdapter(adapter);
-
-
-        //loader = findViewById(R.id.loader);
-        //loader.start();
 
         agent.getPatientList(new DefaultCallback() {
             @Override
@@ -85,7 +68,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                         @Override
                         public void run() {
                             if (hasSucceeded) {
-                                adapter.notifyDataSetChanged();
+//                                adapter.notifyDataSetChanged();
                             }else{
                                 Toast.makeText(getApplicationContext(),"no data",Toast.LENGTH_SHORT);
                             }

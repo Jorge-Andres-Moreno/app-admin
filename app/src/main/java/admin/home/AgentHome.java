@@ -26,6 +26,10 @@ public class AgentHome {
     }
 
 
+    public LocalDataBase getLocalDb(){
+        return LocalDataBase.getInstance(null);
+    }
+
     public void getPatientList(final DefaultCallback notify) {
 
 
