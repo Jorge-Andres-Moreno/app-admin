@@ -48,11 +48,16 @@
     <string name="expirydate">Fecha de vencimiento</string>
     <string name="cvcode">Codigo CV</string>
     <string name="totalpay">Total a pagar</string>
-    <string name="management_doctors">Gestion de doctores</string>
+    <string name="management_professional">Gestion de profesionales de la salud</string>
     <string name="management_patients">Gestion de pacientes</string>
     <string name="management_help">Gestion de ayuda</string>
 
+    <string name="select_option">Seleccione una opción</string>
+
+    <string name="delete">Eliminar</string>
+
     <string name="add">Agregar</string>
+    <string name="assign">Asignar</string>
     <string name="info">Información</string>
     <string name="name_1">Nombre:</string>
     <string name="id">Cedula</string>

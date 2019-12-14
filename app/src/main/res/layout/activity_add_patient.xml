@@ -55,6 +55,7 @@
             android:backgroundTint="@color/blue_strong"
             android:hint="@string/name"
             android:maxLines="1"
+            android:nextFocusDown="@id/id"
             android:textColor="@color/blue_strong"
             android:textSize="@dimen/text_size_medium" />
 
@@ -71,11 +72,12 @@
             android:id="@+id/id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxLines="1"
             android:layout_marginHorizontal="@dimen/size_xxs"
             android:layout_marginTop="@dimen/margin_default"
             android:backgroundTint="@color/blue_strong"
             android:hint="@string/id_example"
+            android:maxLines="1"
+            android:nextFocusDown="@id/birth_date"
             android:textColor="@color/blue_strong"
             android:textSize="@dimen/text_size_medium" />
 
@@ -95,13 +97,14 @@
             android:layout_marginHorizontal="@dimen/size_xxs"
             android:layout_marginTop="@dimen/margin_default"
             android:backgroundTint="@color/blue_strong"
-            android:hint="@string/birth_date_example"
-            android:textColor="@color/blue_strong"
-            android:textSize="@dimen/text_size_medium"
-            android:inputType="date"
-            android:focusable="false"
             android:clickable="true"
-            android:maxLines="1" />
+            android:focusable="false"
+            android:hint="@string/birth_date_example"
+            android:inputType="date"
+            android:maxLines="1"
+            android:nextFocusDown="@id/age"
+            android:textColor="@color/blue_strong"
+            android:textSize="@dimen/text_size_medium" />
 
         <TextView
             android:layout_width="match_parent"
@@ -121,6 +124,7 @@
             android:backgroundTint="@color/blue_strong"
             android:hint="@string/age_example"
             android:maxLines="1"
+            android:nextFocusDown="@id/risk"
             android:textColor="@color/blue_strong"
             android:textSize="@dimen/text_size_medium" />
 
@@ -133,7 +137,7 @@
             android:textColor="@color/blue"
             android:textSize="@dimen/text_size_normal" />
 
-        <EditText
+        <Spinner
             android:id="@+id/risk"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -142,6 +146,7 @@
             android:backgroundTint="@color/blue_strong"
             android:hint="@string/risk_example"
             android:maxLines="1"
+            android:nextFocusDown="@id/diagnostic"
             android:textColor="@color/blue_strong"
             android:textSize="@dimen/text_size_medium" />
 
@@ -160,13 +165,14 @@
             android:layout_height="@dimen/body_huge"
             android:layout_marginHorizontal="@dimen/size_xxs"
             android:layout_marginTop="@dimen/margin_default"
-            android:hint="@string/diagnostic_example"
-            android:ems="10"
+            android:background="@drawable/rounded_corners"
+            android:ems="200"
             android:gravity="top"
+            android:hint="@string/diagnostic_example"
             android:inputType="textCapSentences|textMultiLine"
+            android:nextFocusDown="@id/email"
             android:scrollbars="vertical"
             android:textColor="@color/blue_strong"
-            android:background="@drawable/rounded_corners"
             android:textSize="@dimen/text_size_medium" />
 
         <TextView
@@ -184,9 +190,10 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/size_xxs"
             android:layout_marginTop="@dimen/margin_default"
-            android:maxLines="1"
             android:backgroundTint="@color/blue_strong"
             android:hint="@string/email_example"
+            android:maxLines="1"
+            android:nextFocusDown="@id/telephone"
             android:textColor="@color/blue_strong"
             android:textSize="@dimen/text_size_medium" />
 
@@ -202,15 +209,15 @@
         <EditText
             android:id="@+id/telephone"
             android:layout_width="match_parent"
-            android:maxLines="1"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/size_xxs"
             android:layout_marginTop="@dimen/margin_default"
             android:backgroundTint="@color/blue_strong"
             android:hint="@string/telephone_number_example"
+            android:maxLines="1"
+            android:nextFocusDown="@id/mobile_number"
             android:textColor="@color/blue_strong"
             android:textSize="@dimen/text_size_medium" />
-
 
         <TextView
             android:layout_width="match_parent"
@@ -226,10 +233,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/size_xxs"
-            android:maxLines="1"
             android:layout_marginTop="@dimen/margin_default"
             android:backgroundTint="@color/blue_strong"
             android:hint="@string/mobile_number_example"
+            android:maxLines="1"
+            android:nextFocusDown="@id/state"
             android:textColor="@color/blue_strong"
             android:textSize="@dimen/text_size_medium" />
 
@@ -245,12 +253,13 @@
         <EditText
             android:id="@+id/state"
             android:layout_width="match_parent"
-            android:maxLines="1"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/size_xxs"
             android:layout_marginTop="@dimen/margin_default"
             android:backgroundTint="@color/blue_strong"
             android:hint="@string/state_example"
+            android:maxLines="1"
+            android:nextFocusDown="@id/city"
             android:textColor="@color/blue_strong"
             android:textSize="@dimen/text_size_medium" />
 
@@ -270,8 +279,9 @@
             android:layout_marginHorizontal="@dimen/size_xxs"
             android:layout_marginTop="@dimen/margin_default"
             android:backgroundTint="@color/blue_strong"
-            android:maxLines="1"
             android:hint="@string/city_example"
+            android:maxLines="1"
+            android:nextFocusDown="@id/address"
             android:textColor="@color/blue_strong"
             android:textSize="@dimen/text_size_medium" />
 
@@ -289,10 +299,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/size_xxs"
-            android:maxLines="1"
             android:layout_marginTop="@dimen/margin_default"
             android:backgroundTint="@color/blue_strong"
             android:hint="@string/address_example"
+            android:maxLines="1"
+            android:nextFocusDown="@id/password"
             android:textColor="@color/blue_strong"
             android:textSize="@dimen/text_size_medium" />
 
@@ -310,13 +321,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/size_xxs"
-            android:maxLines="1"
             android:layout_marginTop="@dimen/margin_default"
             android:backgroundTint="@color/blue_strong"
             android:fontFamily="@font/montserrat_regular"
             android:hint="@string/password_example"
             android:inputType="textPassword"
-            android:nextFocusDown="@+id/actionButton"
+            android:maxLines="1"
+            android:nextFocusDown="@+id/confirm_password"
             android:singleLine="true"
             android:textColor="@color/blue_strong"
             android:textSize="@dimen/text_size_medium" />
@@ -337,11 +348,11 @@
             android:layout_marginHorizontal="@dimen/size_xxs"
             android:layout_marginTop="@dimen/margin_default"
             android:backgroundTint="@color/blue_strong"
-            android:maxLines="1"
             android:fontFamily="@font/montserrat_regular"
             android:hint="@string/password_example"
             android:inputType="textPassword"
-            android:nextFocusDown="@+id/actionButton"
+            android:maxLines="1"
+            android:nextFocusDown="@+id/name_contact"
             android:singleLine="true"
             android:textColor="@color/blue_strong"
             android:textSize="@dimen/text_size_medium" />
@@ -377,6 +388,7 @@
             android:backgroundTint="@color/blue_strong"
             android:hint="@string/name"
             android:maxLines="1"
+            android:nextFocusDown="@id/telephone_contact"
             android:textColor="@color/blue_strong"
             android:textSize="@dimen/text_size_medium" />
 
@@ -395,9 +407,10 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/size_xxs"
             android:layout_marginTop="@dimen/margin_default"
-            android:maxLines="1"
             android:backgroundTint="@color/blue_strong"
             android:hint="@string/telephone_number_example"
+            android:maxLines="1"
+            android:nextFocusDown="@id/relation"
             android:textColor="@color/blue_strong"
             android:textSize="@dimen/text_size_medium" />
 
@@ -414,11 +427,12 @@
             android:id="@+id/relation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxLines="1"
             android:layout_marginHorizontal="@dimen/size_xxs"
             android:layout_marginTop="@dimen/margin_default"
             android:backgroundTint="@color/blue_strong"
             android:hint="@string/relation_example"
+            android:maxLines="1"
+            android:nextFocusDown="@id/register"
             android:textColor="@color/blue_strong"
             android:textSize="@dimen/text_size_medium" />
 

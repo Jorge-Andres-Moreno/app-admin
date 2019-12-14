@@ -25,7 +25,7 @@ import admin.login.LoginActivity;
 import admin.profile.ProfileActivity;
 import admin.utils.DefaultCallback;
 
-public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
     private Toolbar toolbar;
     private AgentHome agent;
@@ -69,14 +69,18 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                         public void run() {
                             if (hasSucceeded) {
 //                                adapter.notifyDataSetChanged();
-                            }else{
-                                Toast.makeText(getApplicationContext(),"no data",Toast.LENGTH_SHORT);
+                            } else {
+                                Toast.makeText(getApplicationContext(), "no data", Toast.LENGTH_SHORT);
                             }
                             //loader.stop();
                         }
                     });
             }
         });
+
+        findViewById(R.id.professional_button).setOnClickListener(this);
+        findViewById(R.id.patient_button).setOnClickListener(this);
+        findViewById(R.id.help_button).setOnClickListener(this);
 
     }
 
@@ -95,20 +99,16 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
-
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         Intent in;
         switch (item.getItemId()) {
             case R.id.profile:
-                Toast.makeText(this, "account", Toast.LENGTH_LONG);
                 in = new Intent(this, ProfileActivity.class);
                 startActivity(in);
                 break;
 
             case R.id.help:
-                Toast.makeText(this, "Help", Toast.LENGTH_LONG);
                 in = new Intent(HomeActivity.this, HelpActivity.class);
                 startActivity(in);
                 break;
@@ -124,5 +124,22 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return false;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.professional_button:
+                DialogSelectProfessional dialogSelectProfessional = new DialogSelectProfessional(this);
+                dialogSelectProfessional.show();
+                break;
+            case R.id.patient_button:
+                DialogSelectPatient dialogSelectPatient = new DialogSelectPatient(this);
+                dialogSelectPatient.show();
+                break;
+            case R.id.help_button:
+                Toast.makeText(this, "Proximamente", Toast.LENGTH_SHORT).show();
+                break;
+        }
     }
 }

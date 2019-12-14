@@ -55,7 +55,7 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.PatientH
         @Override
         public void onClick(View v) {
 //            new AgentMonitor(agent.pacientes.get(position).getId());
-            DialogSelectParameter dialogSelectParameter = new DialogSelectParameter(activity);
+            DialogSelectPatient dialogSelectParameter = new DialogSelectPatient(activity);
             dialogSelectParameter.show();
 //            Intent in = new Intent(activity, MonitorActivity.class);
 //            in.putExtra("id",agent.pacientes.get(position).getId());
