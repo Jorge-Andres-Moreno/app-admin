@@ -75,6 +75,27 @@
             android:layout_marginTop="@dimen/margin_default"
             android:backgroundTint="@color/blue_strong"
             android:hint="@string/id_example"
+            android:nextFocusDown="@id/profession"
+            android:textColor="@color/blue_strong"
+            android:textSize="@dimen/text_size_medium" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_xlarge"
+            android:paddingStart="@dimen/size_xxs"
+            android:text="@string/profession_1"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/text_size_normal" />
+
+        <EditText
+            android:id="@+id/profession"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/size_xxs"
+            android:layout_marginTop="@dimen/margin_default"
+            android:backgroundTint="@color/blue_strong"
+            android:hint="@string/profession_example"
             android:nextFocusDown="@id/email"
             android:textColor="@color/blue_strong"
             android:textSize="@dimen/text_size_medium" />

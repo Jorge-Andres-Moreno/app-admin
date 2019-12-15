@@ -15,15 +15,16 @@ import com.example.admin.R;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import admin.patient.AgentPatient;
+import admin.utils.DefaultCallback;
 
-public class AddActivity extends AppCompatActivity implements View.OnClickListener {
+public class AddActivity extends AppCompatActivity implements View.OnClickListener, DefaultCallback {
 
     /**
      * Atributos del Profesional de la salud
      */
     private EditText name;
     private EditText id;
+    private EditText profession;
     private EditText email;
     private EditText telephone;
     private EditText mobile_number;
@@ -53,6 +54,7 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
 
         name = findViewById(R.id.name);
         id = findViewById(R.id.id);
+        profession = findViewById(R.id.profession);
         email = findViewById(R.id.email);
         telephone = findViewById(R.id.telephone);
         mobile_number = findViewById(R.id.mobile_number);
@@ -79,6 +81,7 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
 
         String _name = name.getText().toString().trim();
         String _id = id.getText().toString().trim();
+        String _profession = profession.getText().toString().trim();
         String _email = email.getText().toString().trim();
         String _telephone = telephone.getText().toString().trim();
         String _mobile_number = mobile_number.getText().toString().trim();
@@ -94,33 +97,35 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
 
         if (!_name.equals(""))
             if (!_id.equals(""))
-                if (validateEmail(_email))
-                    if (_mobile_number.length() == 10)
-                        if (!_state.equals(""))
-                            if (!_city.equals(""))
-                                if (_password.length() >= 6 && _password.equals(_confirm_password))
-                                    if (!_name_company.equals(""))
-                                        if (!_telephone_company.equals(""))
-                                            if (!_address_company.equals(""))
-                                                Toast.makeText(this, "Rico pa rico", Toast.LENGTH_SHORT).show();
+                if (!_profession.equals(""))
+                    if (validateEmail(_email))
+                        if (_mobile_number.length() == 10)
+                            if (!_state.equals(""))
+                                if (!_city.equals(""))
+                                    if (_password.length() >= 6 && _password.equals(_confirm_password))
+                                        if (!_name_company.equals(""))
+                                            if (!_telephone_company.equals(""))
+                                                if (!_address_company.equals(""))
+                                                    agent.register(_name, _id, _profession, _email, _telephone, _mobile_number, _state, _city, _password,
+                                                            _name_company, _telephone_company, _address_company, this);
+                                                else
+                                                    Toast.makeText(this, "Ingrese la direccion de la empresa", Toast.LENGTH_SHORT).show();
                                             else
-                                                Toast.makeText(this, "Ingrese la direccion de la empresa", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(this, "Ingrese un telefono de la empresa", Toast.LENGTH_SHORT).show();
                                         else
-                                            Toast.makeText(this, "Ingrese un telefono de la empresa", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(this, "Ingrese un nombre de la empresa", Toast.LENGTH_SHORT).show();
                                     else
-                                        Toast.makeText(this, "Ingrese un nombre de la empresa", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(this, "Contraseña no valida", Toast.LENGTH_SHORT).show();
                                 else
-                                    Toast.makeText(this, "Contraseña no valida", Toast.LENGTH_SHORT).show();
-
+                                    Toast.makeText(this, "Ingrese una Ciudad", Toast.LENGTH_SHORT).show();
                             else
-                                Toast.makeText(this, "Ingrese una Ciudad", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(this, "Ingrese un departamento", Toast.LENGTH_SHORT).show();
                         else
-                            Toast.makeText(this, "Ingrese un departamento", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(this, "Ingrese un numero celular", Toast.LENGTH_SHORT).show();
                     else
-                        Toast.makeText(this, "Ingrese un numero celular", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Ingrese un correo electronico", Toast.LENGTH_SHORT).show();
                 else
-                    Toast.makeText(this, "Ingrese un correo electronico", Toast.LENGTH_SHORT).show();
-
+                    Toast.makeText(this, "Ingrese una profesion", Toast.LENGTH_SHORT).show();
             else
                 Toast.makeText(this, "Ingrese una cedula", Toast.LENGTH_SHORT).show();
         else
@@ -150,5 +155,19 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
                 register();
                 break;
         }
+    }
+
+    @Override
+    public void onFinishProcess(final boolean hasSucceeded, Object result) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                if (hasSucceeded)
+                    finish();
+                else
+                    Toast.makeText(AddActivity.this, "Error", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 }

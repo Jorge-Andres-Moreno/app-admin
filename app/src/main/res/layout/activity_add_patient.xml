@@ -165,6 +165,7 @@
             android:layout_height="@dimen/body_huge"
             android:layout_marginHorizontal="@dimen/size_xxs"
             android:layout_marginTop="@dimen/margin_default"
+            android:padding="@dimen/margin_diminute"
             android:background="@drawable/rounded_corners"
             android:ems="200"
             android:gravity="top"

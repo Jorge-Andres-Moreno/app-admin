@@ -63,9 +63,11 @@
     <string name="id">Cedula</string>
     <string name="id_example">1.234.567.890</string>
     <string name="id_1">Cedula:</string>
+    <string name="profession_1">Profesión:</string>
+    <string name="profession_example">Cardialogo, Deportologo, Nutricionista, etc</string>
     <string name="birth_date_1">Fecha de nacimiento:</string>
     <string name="birth_date_example">AAAA/MM/DD</string>
-    <string name="risk_1">Riesgo:</string>
+    <string name="risk_1">Nivel de riesgo:</string>
     <string name="risk_example">BAJO, MEDIO O ALTO</string>
     <string name="diagnostic_1">Diagnostico:</string>
     <string name="diagnostic_example">Descripción sobre el paciente y sus patalogias</string>

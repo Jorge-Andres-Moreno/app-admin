@@ -24,7 +24,9 @@ import java.util.Calendar;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class AddActivity extends AppCompatActivity implements View.OnClickListener {
+import admin.utils.DefaultCallback;
+
+public class AddActivity extends AppCompatActivity implements View.OnClickListener, DefaultCallback {
 
     /**
      * Atributos del paciente
@@ -158,7 +160,8 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
                                                     if (!_name_contact.equals(""))
                                                         if (!_telephone_contact.equals(""))
                                                             if (!_relation.equals(""))
-                                                                Toast.makeText(this, "Rico pa rico", Toast.LENGTH_SHORT).show();
+                                                                agent.register(_name, _id, _birth, _age, _diagnostic, _email, _telephone, _mobile_number, _state, _city, _address,
+                                                                        _password, _name_contact, _telephone_contact, _relation, this);
                                                             else
                                                                 Toast.makeText(this, "Ingrese un relacion al contacto", Toast.LENGTH_SHORT).show();
                                                         else
@@ -203,30 +206,42 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
         return matcher.matches();
     }
 
+
     private void showDatePicker() {
-        DatePickerFragment newFragment = new DatePickerFragment();
-        newFragment.show(this.getSupportFragmentManager(), "datePicker");
-    }
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                //Esta variable lo que realiza es aumentar en uno el mes ya que comienza desde 0 = enero
+                final int mesActual = month + 1;
+                //Formateo el día obtenido: antepone el 0 si son menores de 10
+                String diaFormateado = (dayOfMonth < 10) ? "0" + String.valueOf(dayOfMonth) : String.valueOf(dayOfMonth);
+                //Formateo el mes obtenido: antepone el 0 si son menores de 10
+                String mesFormateado = (mesActual < 10) ? "0" + String.valueOf(mesActual) : String.valueOf(mesActual);
+                //Muestro la fecha con el formato deseado
+                birth_date.setText(diaFormateado + "/" + mesFormateado + "/" + year);
 
-    public class DatePickerFragment extends DialogFragment
-            implements DatePickerDialog.OnDateSetListener {
-
-        @Override
-        public Dialog onCreateDialog(Bundle savedInstanceState) {
-            // Use the current date as the default date in the picker
-            final Calendar c = Calendar.getInstance();
-            int year = c.get(Calendar.YEAR);
-            int month = c.get(Calendar.MONTH);
-            int day = c.get(Calendar.DAY_OF_MONTH);
-
-            // Create a new instance of DatePickerDialog and return it
-            return new DatePickerDialog(getActivity(), this, year, month, day);
-        }
-
-        public void onDateSet(DatePicker view, int year, int month, int day) {
-            // Do something with the date chosen by the user
-            birth_date.setText(day + "/" + month + "/" + year);
-        }
+            }
+            //Estos valores deben ir en ese orden, de lo contrario no mostrara la fecha actual
+            /**
+             *También puede cargar los valores que usted desee
+             */
+        }, Calendar.getInstance().get(Calendar.YEAR), Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DAY_OF_MONTH));
+        //Muestro el widget
+        datePickerDialog.show();
 
     }
+
+    @Override
+    public void onFinishProcess(final boolean hasSucceeded, Object result) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                if (hasSucceeded)
+                    finish();
+                else
+                    Toast.makeText(AddActivity.this, "Error", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
 }
