@@ -48,7 +48,6 @@ public class AgentLogin {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            //saveUIDLogin();
                             getUserData(callback);
                         } else
                             callback.onFinishProcess(false, null);
@@ -87,12 +86,20 @@ public class AgentLogin {
                         JSONObject object = new JSONObject(response.body().string());
 
                         User user = new User();
-                        user.setCedula(object.getString("cedula"));
+                        user.setUID(object.getString("id"));
+                        user.setName(object.getString("nombre"));
+                        user.setId(object.getString("cedula"));
+                        user.setProfession(object.getString("profesion"));
                         user.setEmail(object.getString("email"));
-                        user.setEspecialidad(object.getString("especialidad"));
-                        user.setId(object.getString("id"));
-                        user.setNombre(object.getString("nombre"));
-                        user.setTelefono(object.getInt("telefono"));
+                        user.setMobile_number(object.getString("celular"));
+                        user.setTelephone(object.getString("telefono"));
+                        user.setState(object.getString("departamento"));
+                        user.setCity(object.getString("ciudad"));
+
+                        JSONObject company = object.getJSONObject("empresa");
+                        user.setName_company(company.getString("nombre"));
+                        user.setTelephone_company(company.getString("telefono"));
+                        user.setAddress_company(company.getString("direccion"));
 
                         LocalDataBase.getInstance(null).saveUser(user);
                         callback.onFinishProcess(true, null);

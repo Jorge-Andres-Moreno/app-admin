@@ -160,7 +160,7 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
                                                     if (!_name_contact.equals(""))
                                                         if (!_telephone_contact.equals(""))
                                                             if (!_relation.equals(""))
-                                                                agent.register(_name, _id, _birth, _age, _diagnostic, _email, _telephone, _mobile_number, _state, _city, _address,
+                                                                agent.register(_name, _id, _birth, _age, risk_state, _diagnostic, _email, _telephone, _mobile_number, _state, _city, _address,
                                                                         _password, _name_contact, _telephone_contact, _relation, this);
                                                             else
                                                                 Toast.makeText(this, "Ingrese un relacion al contacto", Toast.LENGTH_SHORT).show();

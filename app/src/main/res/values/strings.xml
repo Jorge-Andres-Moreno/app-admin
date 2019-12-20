@@ -30,9 +30,9 @@
 
     <string name="fecha">2019/04/05</string>
 
+    <string name="profile">Perfil</string>
 
     <string name="monitoringtext">Monitoreo</string>
-
 
     <string name="Home">INICIO</string>
     <string name="List_patients">Lista de pacientes</string>
@@ -85,6 +85,7 @@
     <string name="password_example">**********</string>
     <string name="confirm_password_1">Confirmar Contraseña:</string>
     <string name="information_company_1">Datos de la compañia</string>
+    <string name="information_contact_1">Datos del contacto</string>
     <string name="address_1">Dirección:</string>
     <string name="address_example">Cra 123 # 45 - 67</string>
     <string name="telephone_number_1">Numero telefonico:</string>

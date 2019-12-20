@@ -53,30 +53,30 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         View headerView = navigationView.getHeaderView(0);
         TextView navUsername = headerView.findViewById(R.id.nameUserNav);
-        navUsername.setText(agent.getLocalDb().getUser().getNombre());
+        navUsername.setText(agent.getLocalDb().getUser().getName());
 
         Window window = getWindow();
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.setStatusBarColor(ContextCompat.getColor(this, R.color.blue_strong));
 
-        agent.getPatientList(new DefaultCallback() {
-            @Override
-            public void onFinishProcess(final boolean hasSucceeded, Object result) {
-                if (hasSucceeded)
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            if (hasSucceeded) {
-//                                adapter.notifyDataSetChanged();
-                            } else {
-                                Toast.makeText(getApplicationContext(), "no data", Toast.LENGTH_SHORT);
-                            }
-                            //loader.stop();
-                        }
-                    });
-            }
-        });
+//        agent.getPatientList(new DefaultCallback() {
+//            @Override
+//            public void onFinishProcess(final boolean hasSucceeded, Object result) {
+//                if (hasSucceeded)
+//                    runOnUiThread(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            if (hasSucceeded) {
+////                                adapter.notifyDataSetChanged();
+//                            } else {
+//                                Toast.makeText(getApplicationContext(), "no data", Toast.LENGTH_SHORT);
+//                            }
+//                            //loader.stop();
+//                        }
+//                    });
+//            }
+//        });
 
         findViewById(R.id.professional_button).setOnClickListener(this);
         findViewById(R.id.patient_button).setOnClickListener(this);

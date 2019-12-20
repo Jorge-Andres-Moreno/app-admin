@@ -367,7 +367,7 @@
             android:fontFamily="@font/montserrat_regular"
             android:paddingVertical="@dimen/margin_large"
             android:paddingStart="@dimen/size_xxs"
-            android:text="@string/information_company_1"
+            android:text="@string/information_contact_1"
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_large" />
 

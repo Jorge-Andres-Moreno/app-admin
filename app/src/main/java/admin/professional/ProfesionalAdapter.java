@@ -1,4 +1,4 @@
-package admin.home;
+package admin.professional;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -11,12 +11,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.admin.R;
 
-public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.PatientHolder> {
+import admin.home.AgentHome;
+import admin.home.DialogSelectPatient;
+
+public class ProfesionalAdapter extends RecyclerView.Adapter<ProfesionalAdapter.PatientHolder> {
 
     private AgentHome agent;
     private Activity activity;
 
-    public PatientAdapter(AgentHome agent, Activity activity) {
+    public ProfesionalAdapter(AgentHome agent, Activity activity) {
         this.agent = agent;
         this.activity = activity;
     }

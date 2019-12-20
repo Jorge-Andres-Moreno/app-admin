@@ -30,7 +30,7 @@ public class AgentHelp {
                     JSONObject jsonBody = new JSONObject();
                     jsonBody.put("razon",reason);
                     jsonBody.put("mensaje",message);
-                    jsonBody.put("nombre", LocalDataBase.getInstance(null).getUser().getNombre());
+                    jsonBody.put("nombre", LocalDataBase.getInstance(null).getUser().getName());
                     jsonBody.put("email",LocalDataBase.getInstance(null).getUser().getEmail());
                     jsonBody.put("id",LocalDataBase.getInstance(null).getUser().getId());
 
