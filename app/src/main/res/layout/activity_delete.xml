@@ -22,9 +22,22 @@
 
     </RelativeLayout>
 
+    <TextView
+        android:id="@+id/list_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/red_strong"
+        android:fontFamily="@font/montserrat_regular"
+        android:paddingVertical="@dimen/margin_large"
+        android:paddingStart="@dimen/size_xxs"
+        android:text="@string/personal_information"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_large" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_persons"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent"
+        android:paddingHorizontal="@dimen/text_size_xxs"/>
 
 </LinearLayout>

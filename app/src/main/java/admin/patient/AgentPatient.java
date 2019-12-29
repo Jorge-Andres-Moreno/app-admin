@@ -27,7 +27,7 @@ public class AgentPatient {
         pacientes.add(new Patient());
     }
 
-    public LocalDataBase getLocalDb(){
+    public LocalDataBase getLocalDb() {
         return LocalDataBase.getInstance(null);
     }
 
@@ -36,6 +36,8 @@ public class AgentPatient {
                          final String _birth,
                          final String _age,
                          final String _risk,
+                         final String _weight,
+                         final String _height,
                          final String _diagnostic,
                          final String _email,
                          final String _telephone,
@@ -68,6 +70,8 @@ public class AgentPatient {
                     informacion.put("cedula", _id);
                     informacion.put("fecha_nacimiento", _birth);
                     informacion.put("edad", _age);
+                    informacion.put("peso", _height);
+                    informacion.put("altura", _weight);
                     informacion.put("diagnostico", _diagnostic);
                     informacion.put("email", _email);
                     informacion.put("telefono", _telephone);
@@ -105,7 +109,7 @@ public class AgentPatient {
         }).start();
     }
 
-     public void getPatientList(final DefaultCallback notify) {
+    public void getPatientList(final DefaultCallback notify) {
 
 
         new Thread(new Runnable() {
@@ -139,7 +143,7 @@ public class AgentPatient {
                             JSONObject aux = new JSONObject(array.get(i).toString());
                             Patient paciente = new Patient();
                             paciente.setId(aux.getString("id"));
-                            paciente.setNombre(aux.getString("nombre"));
+                            paciente.setName(aux.getString("nombre"));
                             pacientes.add(paciente);
                         }
 

@@ -14,7 +14,7 @@ import androidx.core.content.ContextCompat;
 import com.example.admin.R;
 
 import admin.patient.AddActivity;
-import admin.patient.DeleteActivity;
+import admin.delete.DeleteActivity;
 
 
 public class DialogSelectPatient extends Dialog implements View.OnClickListener {
@@ -119,6 +119,7 @@ public class DialogSelectPatient extends Dialog implements View.OnClickListener 
                     this.dismiss();
                 } else if (delete_check.isChecked()) {
                     Intent in = new Intent(v.getContext(), DeleteActivity.class);
+                    in.putExtra("isPatientSelect", true);
                     v.getContext().startActivity(in);
                     this.dismiss();
 

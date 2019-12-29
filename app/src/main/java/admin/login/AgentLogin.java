@@ -70,6 +70,7 @@ public class AgentLogin {
 
                     RequestBody body = new FormBody.Builder()
                             .add("type", "1")
+                            .add("token","token")
                             .add("id", firebaseAuth.getInstance().getCurrentUser().getUid() + "")
                             .build();
 

@@ -32,6 +32,9 @@
 
     <string name="profile">Perfil</string>
 
+    <string name="list_patients">Listado de Pacientes</string>
+    <string name="list_professionals">Listado de Profesionales</string>
+
     <string name="monitoringtext">Monitoreo</string>
 
     <string name="Home">INICIO</string>
@@ -60,6 +63,8 @@
     <string name="assign">Asignar</string>
     <string name="info">Información</string>
     <string name="name_1">Nombre:</string>
+    <string name="location_1">Ubicación:</string>
+    <string name="location_example_1">Cali,Valle del cauca</string>
     <string name="id">Cedula</string>
     <string name="id_example">1.234.567.890</string>
     <string name="id_1">Cedula:</string>
@@ -73,6 +78,10 @@
     <string name="diagnostic_example">Descripción sobre el paciente y sus patalogias</string>
     <string name="age_1">Edad:</string>
     <string name="age_example">##</string>
+    <string name="height_1">Peso:</string>
+    <string name="weight_example">##</string>
+    <string name="weight_1">Altura:</string>
+    <string name="height_example">##</string>
     <string name="email_1">Correo Electronico:</string>
     <string name="email_example">example@mail.com</string>
     <string name="mobile_number_1">Numero de celular:</string>

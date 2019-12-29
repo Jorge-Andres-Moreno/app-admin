@@ -4,7 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-    <uses-permission android:name="WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="WRITE_EXTERNAL_STORAGE" />
 
     <dist:module dist:instant="true" />
     <application
@@ -30,38 +30,39 @@
         <activity
             android:name="admin.login.LoginActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
 
-        <activity android:name="admin.home.HomeActivity"
+        <activity
+            android:name="admin.home.HomeActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
 
-        <activity android:name="admin.help.HelpActivity"
+        <activity
+            android:name="admin.help.HelpActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
 
-        <activity android:name="admin.profile.ProfileActivity"
+        <activity
+            android:name="admin.profile.ProfileActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
 
-        <activity android:name="admin.patient.AddActivity"
+        <activity
+            android:name="admin.patient.AddActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
 
-        <activity android:name="admin.professional.AddActivity"
+        <activity
+            android:name="admin.professional.AddActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
 
-        <activity android:name="admin.patient.DeleteActivity"
+        <activity
+            android:name="admin.delete.DeleteActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"/>
-
-        <activity android:name="admin.professional.DeleteActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
 
     </application>
-
 
 
 </manifest>

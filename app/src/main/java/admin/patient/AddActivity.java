@@ -35,6 +35,8 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
     private EditText id;
     private EditText birth_date;
     private EditText age;
+    private EditText weight;
+    private EditText height;
     private Spinner risk;
     private String risk_state;
     private EditText diagnostic;
@@ -92,6 +94,8 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
 
         diagnostic = findViewById(R.id.diagnostic);
         email = findViewById(R.id.email);
+        weight = findViewById(R.id.weight);
+        height = findViewById(R.id.height);
         telephone = findViewById(R.id.telephone);
         mobile_number = findViewById(R.id.mobile_number);
         state = findViewById(R.id.state);
@@ -132,6 +136,8 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
         String _id = id.getText().toString().trim();
         String _birth = birth_date.getText().toString().trim();
         String _age = age.getText().toString().trim();
+        String _weight = weight.getText().toString().trim();
+        String _height = height.getText().toString().trim();
         String _diagnostic = diagnostic.getText().toString().trim();
         String _email = email.getText().toString().trim();
         String _telephone = telephone.getText().toString().trim();
@@ -150,38 +156,44 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
             if (!_id.equals(""))
                 if (!_birth.equals(""))
                     if (!_age.equals(""))
-                        if (!_diagnostic.equals(""))
-                            if (validateEmail(_email))
-                                if (_mobile_number.length() == 10)
-                                    if (!_state.equals(""))
-                                        if (!_city.equals(""))
-                                            if (!_address.equals(""))
-                                                if (_password.length() >= 6 && _password.equals(_confirm_password))
-                                                    if (!_name_contact.equals(""))
-                                                        if (!_telephone_contact.equals(""))
-                                                            if (!_relation.equals(""))
-                                                                agent.register(_name, _id, _birth, _age, risk_state, _diagnostic, _email, _telephone, _mobile_number, _state, _city, _address,
-                                                                        _password, _name_contact, _telephone_contact, _relation, this);
+                        if (!_weight.equals(""))
+                            if (!_height.equals(""))
+                                if (!_diagnostic.equals(""))
+                                    if (validateEmail(_email))
+                                        if (_mobile_number.length() == 10)
+                                            if (!_state.equals(""))
+                                                if (!_city.equals(""))
+                                                    if (!_address.equals(""))
+                                                        if (_password.length() >= 6 && _password.equals(_confirm_password))
+                                                            if (!_name_contact.equals(""))
+                                                                if (!_telephone_contact.equals(""))
+                                                                    if (!_relation.equals(""))
+                                                                        agent.register(_name, _id, _birth, _age, risk_state, _weight, _height, _diagnostic, _email, _telephone, _mobile_number, _state, _city, _address,
+                                                                                _password, _name_contact, _telephone_contact, _relation, this);
+                                                                    else
+                                                                        Toast.makeText(this, "Ingrese un relacion al contacto", Toast.LENGTH_SHORT).show();
+                                                                else
+                                                                    Toast.makeText(this, "Ingrese un telefono de contacto", Toast.LENGTH_SHORT).show();
                                                             else
-                                                                Toast.makeText(this, "Ingrese un relacion al contacto", Toast.LENGTH_SHORT).show();
+                                                                Toast.makeText(this, "Ingrese un nombre de contacto", Toast.LENGTH_SHORT).show();
                                                         else
-                                                            Toast.makeText(this, "Ingrese un telefono de contacto", Toast.LENGTH_SHORT).show();
+                                                            Toast.makeText(this, "Contraseña no valida", Toast.LENGTH_SHORT).show();
                                                     else
-                                                        Toast.makeText(this, "Ingrese un nombre de contacto", Toast.LENGTH_SHORT).show();
+                                                        Toast.makeText(this, "Ingrese una dirección", Toast.LENGTH_SHORT).show();
                                                 else
-                                                    Toast.makeText(this, "Contraseña no valida", Toast.LENGTH_SHORT).show();
+                                                    Toast.makeText(this, "Ingrese una Ciudad", Toast.LENGTH_SHORT).show();
                                             else
-                                                Toast.makeText(this, "Ingrese una dirección", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(this, "Ingrese un departamento", Toast.LENGTH_SHORT).show();
                                         else
-                                            Toast.makeText(this, "Ingrese una Ciudad", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(this, "Ingrese un numero celular", Toast.LENGTH_SHORT).show();
                                     else
-                                        Toast.makeText(this, "Ingrese un departamento", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(this, "Ingrese un correo electronico", Toast.LENGTH_SHORT).show();
                                 else
-                                    Toast.makeText(this, "Ingrese un numero celular", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(this, "Ingrese un diagnostico", Toast.LENGTH_SHORT).show();
                             else
-                                Toast.makeText(this, "Ingrese un correo electronico", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(this, "Ingrese un Peso", Toast.LENGTH_SHORT).show();
                         else
-                            Toast.makeText(this, "Ingrese un diagnostico", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(this, "Ingrese una altura", Toast.LENGTH_SHORT).show();
                     else
                         Toast.makeText(this, "Ingrese una edad", Toast.LENGTH_SHORT).show();
                 else

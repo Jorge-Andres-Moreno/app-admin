@@ -34,7 +34,7 @@ public class ProfesionalAdapter extends RecyclerView.Adapter<ProfesionalAdapter.
     @Override
     public void onBindViewHolder(@NonNull PatientHolder holder, int position) {
         holder.position = position;
-        holder.textView.setText(agent.pacientes.get(position).getNombre());
+        holder.textView.setText(agent.pacientes.get(position).getName());
     }
 
     @Override
