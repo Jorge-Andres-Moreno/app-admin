@@ -13,6 +13,8 @@ import androidx.core.content.ContextCompat;
 
 import com.example.admin.R;
 
+import admin.assign.PatientActivity;
+import admin.model.Patient;
 import admin.patient.AddActivity;
 import admin.delete.DeleteActivity;
 
@@ -124,8 +126,9 @@ public class DialogSelectPatient extends Dialog implements View.OnClickListener 
                     this.dismiss();
 
                 } else if (assign_check.isChecked()) {
-//                    Intent in = new Intent(v.getContext(), AddActivity.class);
-//                    v.getContext().startActivity(in);
+                    Intent in = new Intent(v.getContext(), PatientActivity.class);
+                    v.getContext().startActivity(in);
+
                     this.dismiss();
                 } else
                     Toast.makeText(v.getContext(), "Por favor seleccione una categoría", Toast.LENGTH_SHORT).show();

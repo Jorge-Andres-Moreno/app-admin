@@ -13,6 +13,7 @@
     <string name="skill">Especialidad</string>
     <string name="cc">Cedula</string>
     <string name="patients">Pacientes</string>
+    <string name="patient">Paciente</string>
     <string name="cellphone">Telefono</string>
     <string name="save">Guardar</string>
     <string name="patientlist">Lista de pacientes</string>
@@ -45,7 +46,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="paymethod">Metodo de pago</string>
+    <string name="paymethod">Método de pago</string>
     <string name="paydetails">Perfil</string>
     <string name="numbercard">Numero de tarjeta</string>
     <string name="expirydate">Fecha de vencimiento</string>
@@ -55,7 +56,7 @@
     <string name="management_patients">Gestion de pacientes</string>
     <string name="management_help">Gestion de ayuda</string>
 
-    <string name="select_option">Seleccione una opción</string>
+    <string name="select_option">Selecciona una opción</string>
 
     <string name="delete">Eliminar</string>
 

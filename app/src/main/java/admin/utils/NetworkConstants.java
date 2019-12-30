@@ -13,5 +13,7 @@ public class NetworkConstants {
     public static final String PATH_PATIENT = "pacientes/";
     public static final String PATH_PATIENT_LIST = "pacientes-lista/";
     public static final String PATH_PROFESSIONAL_LIST = "profesional-lista/";
+    public static final String PATH_ASSIGN = "asignar/";
+
 
 }

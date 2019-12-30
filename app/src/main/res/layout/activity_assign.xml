@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gradient_vertical_blue"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center"
+            android:paddingVertical="@dimen/size_xxs"
+            android:text="@string/assign"
+            android:textColor="@color/almost_white"
+            android:textSize="@dimen/text_size_xlarge" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/list_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/red_strong"
+        android:fontFamily="@font/montserrat_regular"
+        android:paddingVertical="@dimen/margin_large"
+        android:paddingStart="@dimen/size_xxs"
+        android:text="@string/personal_information"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_large" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_persons"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="@dimen/text_size_xxs"/>
+
+</LinearLayout>
