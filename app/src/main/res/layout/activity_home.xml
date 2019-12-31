@@ -86,7 +86,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="@drawable/gradient_vertical_backgroud"
+        android:background="@drawable/gradient_vertical_background"
         android:fitsSystemWindows="true"
         android:paddingLeft="50dp"
         android:theme="@style/NavigationTheme"

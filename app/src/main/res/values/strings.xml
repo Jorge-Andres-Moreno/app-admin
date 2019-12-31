@@ -2,11 +2,17 @@
 
     <string name="app_name">Medical Admin</string>
     <string name="deviceLost">No se encontraron pacientes</string>
-    <string name="email">Correo Electronico</string>
-    <string name="login_large">Iniciar Sesion</string>
+    <string name="email">Correo Electrónico</string>
+    <string name="login_large">Iniciar Sesión</string>
     <string name="password">Contraseña</string>
     <string name="passwordLost">¿Has olvidado tu contraseña?</string>
-    <string name="login">Sesion</string>
+    <string name="login">Ingresar</string>
+    <string name="welcome">Bienvenido</string>
+    <string name="alert_email_in">Ingrese un correo valido</string>
+    <string name="alert_password_in">Ingrese una contraseña</string>
+
+
+
     <string name="personal_information">Datos Personales</string>
     <string name="idenfied">Identificador</string>
     <string name="name">Nombre</string>
@@ -83,7 +89,7 @@
     <string name="weight_example">##</string>
     <string name="weight_1">Altura:</string>
     <string name="height_example">##</string>
-    <string name="email_1">Correo Electronico:</string>
+    <string name="email_1">Correo Electrónico:</string>
     <string name="email_example">example@mail.com</string>
     <string name="mobile_number_1">Numero de celular:</string>
     <string name="mobile_number_example">301-245-6789</string>
@@ -104,6 +110,7 @@
     <string name="contact">Contacto</string>
     <string name="relation_1">Parentesco:</string>
     <string name="relation_example">Padre, Hijo, Hermano, Amigo, etc.</string>
+    <string name="landing_logo">landing_logo</string>
 
 
 </resources>

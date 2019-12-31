@@ -14,8 +14,7 @@ import androidx.core.content.ContextCompat;
 import com.example.admin.R;
 
 import admin.assign.PatientActivity;
-import admin.model.Patient;
-import admin.patient.AddActivity;
+import admin.patient_add.AddActivity;
 import admin.delete.DeleteActivity;
 
 
@@ -33,7 +32,7 @@ public class DialogSelectPatient extends Dialog implements View.OnClickListener 
 
     public DialogSelectPatient(@NonNull Context context) {
         super(context);
-        setContentView(R.layout.dialog_parameter);
+        setContentView(R.layout.dialog_option_management);
 
         findViewById(R.id.actionButton).setOnClickListener(this);
 

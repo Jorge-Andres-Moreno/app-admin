@@ -24,14 +24,14 @@ public class SplashScreenActivity extends AppCompatActivity {
             @Override
             public void run() {
                 Intent intent;
-                if (agentLogin.isSingIn())
+                if (agentLogin.isSignIn())
                     intent = new Intent(getApplicationContext(), HomeActivity.class);
                 else
                     intent = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(intent);
                 finish();
             }
-        }, 2500);
+        }, 2000);
     }
 }
 

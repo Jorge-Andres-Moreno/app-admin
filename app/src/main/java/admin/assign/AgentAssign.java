@@ -20,7 +20,7 @@ public class AgentAssign {
 
     private static AgentAssign INSTANCE;
 
-    public ArrayList<Patient> pacientes;
+    public ArrayList<Patient> patients;
     public Patient selectPatient;
 
     public ArrayList<User> professionals;
@@ -28,7 +28,7 @@ public class AgentAssign {
 
     public AgentAssign() {
         INSTANCE = this;
-        pacientes = new ArrayList<>();
+        patients = new ArrayList<>();
         professionals = new ArrayList<>();
     }
 
@@ -59,7 +59,7 @@ public class AgentAssign {
 
                         JSONArray array = new JSONArray(response.body().string());
 
-                        pacientes = new ArrayList<Patient>();
+                        patients = new ArrayList<Patient>();
                         for (int i = 0; i < array.length(); i++) {
                             JSONObject aux = new JSONObject(array.get(i).toString());
                             JSONObject inf = aux.getJSONObject("informacion");
@@ -94,7 +94,7 @@ public class AgentAssign {
                             patient.setTelephone_contact(inf_contact.getString("telefono"));
                             patient.setRelation(inf_contact.getString("parentesco"));
 
-                            pacientes.add(patient);
+                            patients.add(patient);
                         }
 
                         notify.onFinishProcess(true, "success");

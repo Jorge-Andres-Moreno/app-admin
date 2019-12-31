@@ -24,32 +24,52 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class AgentLogin {
-    private FirebaseAuth firebaseAuth;
 
+    private FirebaseAuth firebaseAuth;
+    private boolean isSignIn;
+
+    /**
+     * Constructor of Agent that Sign in
+     *
+     * @param context Context with activity invoke
+     */
     public AgentLogin(Context context) {
         firebaseAuth = FirebaseAuth.getInstance();
-        LocalDataBase.getInstance(context);
+        isSignIn = LocalDataBase.getInstance(context).getUser() != null;
     }
 
-    public boolean isSingIn() {
-        return LocalDataBase.getInstance(null).getUser() != null;//Log.i("Error: ",(LocalDataBase.getInstance(null).getUser() == null)+"");
-    }
-
+    /**
+     * Method that Sign Out the User
+     */
     public void signOut() {
         FirebaseAuth.getInstance().signOut();
         LocalDataBase.getInstance(null).deletedCredentials();
     }
 
-    public void registrar(final String email, final String password, final DefaultCallback callback) {
+    /**
+     * @return the answer is User is Sign in that mobile application
+     */
+    public boolean isSignIn() {
+        return isSignIn;
+    }
+
+    /**
+     * Method of Sign In with Firebase and then get all user data of backend
+     *
+     * @param email    email that user gonna be a try sign in
+     * @param password password that user gonna be a try sign in
+     * @param callback uses that response
+     */
+    public void signIn(final String email, final String password, final DefaultCallback callback) {
         new Thread(new Runnable() {
             @Override
             public void run() {
                 firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            getUserData(callback);
-                        } else
+                        if (task.isSuccessful() && task.getResult() != null && task.getResult().getUser() != null)
+                            getUserData(callback, task.getResult().getUser().getUid());
+                        else
                             callback.onFinishProcess(false, null);
                     }
                 });
@@ -57,33 +77,39 @@ public class AgentLogin {
         }).start();
     }
 
-    private void getUserData(final DefaultCallback callback) {
+    /**
+     * Method gonna be a try all user information of backend and save this information in local database
+     *
+     * @param callback uses that response
+     * @param uid      Uid params of firebase which is used as an id
+     */
+    private void getUserData(final DefaultCallback callback, final String uid) {
         new Thread(new Runnable() {
             @Override
             public void run() {
+
+                OkHttpClient okhttp = new OkHttpClient.Builder()
+                        .connectTimeout(5, TimeUnit.SECONDS)
+                        .readTimeout(5, TimeUnit.SECONDS)
+                        .build();
+
+                RequestBody body = new FormBody.Builder()
+                        .add("type", "1")
+                        .add("token", "token")
+                        .add("id", uid)
+                        .build();
+
+                Request request = new Request.Builder()
+                        .url(NetworkConstants.URL + NetworkConstants.PATH_PROFILE)
+                        .post(body)
+                        .build();
                 try {
-
-                    OkHttpClient okhttp = new OkHttpClient.Builder()
-                            .connectTimeout(5, TimeUnit.SECONDS)
-                            .readTimeout(5, TimeUnit.SECONDS)
-                            .build();
-
-                    RequestBody body = new FormBody.Builder()
-                            .add("type", "1")
-                            .add("token","token")
-                            .add("id", firebaseAuth.getInstance().getCurrentUser().getUid() + "")
-                            .build();
-
-
-                    Request request = new Request.Builder()
-                            .url(NetworkConstants.URL + NetworkConstants.PATH_PROFILE)
-                            .post(body)
-                            .build();
 
                     Response response = okhttp.newCall(request).execute();
 
                     if (response.code() == 200) {
 
+                        assert response.body() != null;
                         JSONObject object = new JSONObject(response.body().string());
 
                         User user = new User();

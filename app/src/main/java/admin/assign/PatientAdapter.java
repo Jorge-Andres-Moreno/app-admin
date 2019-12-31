@@ -34,16 +34,16 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.PatientH
     @Override
     public void onBindViewHolder(@NonNull PatientHolder holder, int position) {
         holder.position = position;
-        holder.name.setText(agent.pacientes.get(position).getName());
-        holder.age.setText(agent.pacientes.get(position).getAge());
-        holder.risk.setText(agent.pacientes.get(position).getRisk());
-        holder.id.setText(agent.pacientes.get(position).getId());
-        holder.diagnostic.setText(agent.pacientes.get(position).getDiagnostic());
+        holder.name.setText(agent.patients.get(position).getName());
+        holder.age.setText(agent.patients.get(position).getAge());
+        holder.risk.setText(agent.patients.get(position).getRisk());
+        holder.id.setText(agent.patients.get(position).getId());
+        holder.diagnostic.setText(agent.patients.get(position).getDiagnostic());
     }
 
     @Override
     public int getItemCount() {
-        return agent.pacientes.size();
+        return agent.patients.size();
     }
 
     public class PatientHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -69,7 +69,7 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.PatientH
 
         @Override
         public void onClick(View v) {
-            agent.selectPatient = agent.pacientes.get(position);
+            agent.selectPatient = agent.patients.get(position);
             Intent in = new Intent(v.getContext(), ProfessionalActivity.class);
             v.getContext().startActivity(in);
             activity.finish();

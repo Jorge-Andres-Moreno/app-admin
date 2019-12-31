@@ -14,7 +14,7 @@ import androidx.core.content.ContextCompat;
 import com.example.admin.R;
 
 import admin.assign.PatientActivity;
-import admin.professional.AddActivity;
+import admin.professional_add.AddActivity;
 import admin.delete.DeleteActivity;
 
 
@@ -32,7 +32,7 @@ public class DialogSelectProfessional extends Dialog implements View.OnClickList
 
     public DialogSelectProfessional(@NonNull Context context) {
         super(context);
-        setContentView(R.layout.dialog_parameter);
+        setContentView(R.layout.dialog_option_management);
 
         findViewById(R.id.actionButton).setOnClickListener(this);
 

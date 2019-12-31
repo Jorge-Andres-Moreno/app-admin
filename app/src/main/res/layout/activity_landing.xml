@@ -2,14 +2,15 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_vertical_backgroud">
+    android:background="@drawable/gradient_vertical_background">
 
     <ImageView
-        android:id="@+id/landingLogo"
+        android:id="@+id/landing_logo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:src="@drawable/logo_title" />
+        android:src="@drawable/logo_title"
+        android:contentDescription="@string/landing_logo" />
 
 </RelativeLayout>

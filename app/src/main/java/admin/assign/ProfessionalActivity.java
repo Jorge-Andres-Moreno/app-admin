@@ -2,8 +2,6 @@ package admin.assign;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
@@ -18,7 +16,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.admin.R;
 
-import admin.professional.ProfesionalAdapter;
 import admin.utils.DefaultCallback;
 
 public class ProfessionalActivity extends AppCompatActivity implements DefaultCallback {

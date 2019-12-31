@@ -48,12 +48,12 @@
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name="admin.patient.AddActivity"
+            android:name="admin.patient_add.AddActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name="admin.professional.AddActivity"
+            android:name="admin.professional_add.AddActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 

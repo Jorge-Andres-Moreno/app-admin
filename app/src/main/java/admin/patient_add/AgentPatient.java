@@ -1,4 +1,4 @@
-package admin.patient;
+package admin.patient_add;
 
 import org.json.JSONArray;
 import org.json.JSONObject;

@@ -1,7 +1,6 @@
 package admin.assign;
 
 
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
@@ -9,7 +8,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -34,7 +32,7 @@ public class PatientActivity extends AppCompatActivity implements DefaultCallbac
 
         agent = new AgentAssign();
 
-        setContentView(R.layout.activity_assign);
+        setContentView(R.layout.activity_assign_patient);
 
         Window window = getWindow();
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
