@@ -118,7 +118,7 @@ public class AgentDelete {
 
                 RequestBody body = new FormBody.Builder()
                         .add("type", (isPatientDelete ? 0 : 1) + "")
-                        .add("id", isPatientDelete ? selectPatient.getId() : selectProfessional.getId())
+                        .add("id", isPatientDelete ? selectPatient.getUID() : selectProfessional.getUID())
                         .build();
 
 

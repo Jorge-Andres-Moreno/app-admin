@@ -97,8 +97,6 @@ public class LoginActivity extends AppCompatActivity implements DefaultCallback 
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                findViewById(R.id.progress_circular).setVisibility(View.GONE);
-                findViewById(R.id.actionButton).setVisibility(View.VISIBLE);
                 if (hasSucceeded) {
                     Toast.makeText(getApplicationContext(), R.string.welcome, Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
@@ -107,6 +105,8 @@ public class LoginActivity extends AppCompatActivity implements DefaultCallback 
                 } else {
                     Toast.makeText(getApplicationContext(), "fail login", Toast.LENGTH_SHORT).show();
                 }
+                findViewById(R.id.progress_circular).setVisibility(View.GONE);
+                findViewById(R.id.actionButton).setVisibility(View.VISIBLE);
             }
         });
     }
